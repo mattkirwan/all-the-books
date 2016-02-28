@@ -9,6 +9,6 @@ client.on("error", (err) => {
 });
 
 
-client.hset("hash_key", "hashtest 1", "some value", redis.print);
+client.hset("hash_key", "hashtestfield", "some value", redis.print);
 
 client.quit();
