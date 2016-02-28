@@ -68,7 +68,8 @@ Vagrant.configure(2) do |config|
   $rootScript = <<SCRIPT
       sudo apt-get update
       sudo apt-get install -y build-essential libssl-dev
-  SCRIPT
+      sudo apt-get -y install redis-server
+SCRIPT
 
   $userScript = <<SCRIPT
     cd /home/vagrant
@@ -77,7 +78,7 @@ Vagrant.configure(2) do |config|
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
     nvm install 4.3.1
     nvm alias default 4.3.1
-  SCRIPT
+SCRIPT
 
 
   config.vm.provision "shell", inline: $rootScript
